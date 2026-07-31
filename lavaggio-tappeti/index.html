@@ -114,7 +114,7 @@
     <a class="btn btn-primary" href="https://tappeto.online/" target="_blank" rel="noopener noreferrer">Vai allo shop online <span aria-hidden="true">↗</span></a>
   </div>
 
-  <main id="contenuto">
+  <main class="service-page" id="contenuto">
     <nav class="breadcrumb container" aria-label="Breadcrumb">
       <ol>
         <li><a href="../">Home</a></li>
@@ -122,105 +122,148 @@
       </ol>
     </nav>
 
-    <section class="service-hero" aria-labelledby="lavaggio-title">
-      <div class="container">
-        <div class="service-hero-shell">
-          <div class="service-hero-copy">
-            <span class="eyebrow eyebrow-light">Cura e manutenzione</span>
-            <h1 id="lavaggio-title">Lavaggio tappeti persiani e orientali a Milano</h1>
-            <p>Ogni tappeto richiede un trattamento adatto alla sua manifattura, alle fibre, ai colori e alle condizioni reali. Irana Tappeti valuta ogni intervento prima del lavaggio e segue direttamente il cliente dal ritiro alla riconsegna.</p>
-            <div class="service-hero-actions">
-              <a class="btn btn-light" href="#contatti" data-service="Lavaggio tappeto">Richiedi una valutazione</a>
-              <a class="btn btn-outline" href="tel:+390266013100">Chiama lo showroom</a>
-            </div>
-            <span class="service-area-note">Showroom a Cinisello Balsamo · Servizio disponibile nell’area di Milano</span>
+    <section class="service-page-hero" aria-labelledby="lavaggio-title">
+      <div class="container service-page-hero-grid">
+        <div class="service-page-hero-copy">
+          <span class="eyebrow">Cura e manutenzione</span>
+          <h1 id="lavaggio-title">Lavaggio tappeti persiani e orientali a Milano</h1>
+          <p>Ogni tappeto richiede un trattamento adatto alla sua manifattura, alle fibre, ai colori e alle condizioni reali. Irana Tappeti valuta ogni intervento prima del lavaggio e segue direttamente il cliente dal ritiro alla riconsegna.</p>
+          <div class="service-page-hero-actions">
+            <a class="btn btn-primary" href="#contatti" data-service="Lavaggio tappeto">Richiedi una valutazione</a>
+            <a class="btn service-secondary-button" href="tel:+390266013100">Chiama lo showroom</a>
           </div>
-          <figure class="service-hero-media">
-            <img src="../rug-detail-optimized.jpg" alt="Dettaglio delle fibre e dei motivi di un tappeto persiano" width="1000" height="1999" decoding="async" fetchpriority="high">
+          <p class="service-area-note">Showroom a Cinisello Balsamo · Servizio disponibile nell’area di Milano</p>
+          <ul class="service-quick-facts" aria-label="Informazioni sul servizio">
+            <li>Valutazione preliminare</li>
+            <li>Ritiro da concordare</li>
+            <li>Assistenza diretta</li>
+          </ul>
+        </div>
+        <figure class="service-page-hero-media">
+          <!-- PRODUZIONE:
+          sostituire https://soheilr.github.io/irana-tappeti/
+          con https://tappeti-irana.com/
+          -->
+          <img src="https://soheilr.github.io/irana-tappeti/rug-detail-optimized.jpg" alt="Dettaglio delle fibre e dei motivi di un tappeto persiano" width="1000" height="1999" decoding="async" fetchpriority="high">
+        </figure>
+      </div>
+    </section>
+
+    <div class="container service-layout">
+      <div class="service-main">
+        <section class="service-section service-control" aria-labelledby="controllo-title">
+          <div class="service-control-grid">
+            <div class="service-section-copy">
+              <span class="eyebrow">Non un lavaggio standard</span>
+              <h2 id="controllo-title">Prima del trattamento viene il controllo del tappeto.</h2>
+              <p>Un tappeto persiano o orientale non può essere trattato come un normale tessuto domestico. Materiali, densità dell’annodatura, stabilità dei colori, frange, bordi e precedenti riparazioni possono richiedere attenzioni differenti.</p>
+              <p>Per questo il primo passaggio è sempre una valutazione. Fotografie e misure permettono di raccogliere le informazioni iniziali; per i casi più delicati può essere necessario esaminare direttamente il tappeto.</p>
+            </div>
+            <ol class="service-numbered-list" aria-label="Controlli prima del lavaggio">
+              <li><span>01</span><strong>Fibre e materiali</strong></li>
+              <li><span>02</span><strong>Stabilità dei colori</strong></li>
+              <li><span>03</span><strong>Frange, bordi e usure</strong></li>
+              <li><span>04</span><strong>Interventi e riparazioni precedenti</strong></li>
+            </ol>
+          </div>
+        </section>
+
+        <figure class="service-image-break">
+          <!-- PRODUZIONE:
+          sostituire https://soheilr.github.io/irana-tappeti/
+          con https://tappeti-irana.com/
+          -->
+          <img src="https://soheilr.github.io/irana-tappeti/showroom-rugs-optimized.jpg" alt="Tappeti persiani e orientali esposti nello showroom Irana Tappeti" width="1200" height="1600" loading="lazy" decoding="async">
+          <figcaption>Ogni intervento viene definito dopo aver valutato materiali, condizioni e caratteristiche del tappeto.</figcaption>
+        </figure>
+
+        <section class="service-section" aria-labelledby="processo-lavaggio-title">
+          <div class="service-section-heading">
+            <span class="eyebrow">Come funziona</span>
+            <h2 id="processo-lavaggio-title">Dal primo contatto alla riconsegna.</h2>
+          </div>
+          <div class="service-timeline">
+            <article class="service-timeline-step"><span class="service-timeline-number">01</span><h3>Richiesta</h3><p>Invia fotografie, misure e una breve descrizione delle condizioni del tappeto.</p></article>
+            <article class="service-timeline-step"><span class="service-timeline-number">02</span><h3>Valutazione</h3><p>Verifichiamo materiale, manifattura, colori, usure ed eventuali macchie visibili.</p></article>
+            <article class="service-timeline-step"><span class="service-timeline-number">03</span><h3>Preventivo</h3><p>Comunichiamo il trattamento consigliato, il costo indicativo e le modalità di ritiro.</p></article>
+            <article class="service-timeline-step"><span class="service-timeline-number">04</span><h3>Lavaggio e asciugatura</h3><p>Il tappeto viene trattato in base alle sue caratteristiche e lasciato asciugare con tempi adeguati.</p></article>
+            <article class="service-timeline-step"><span class="service-timeline-number">05</span><h3>Riconsegna</h3><p>Al termine concordiamo il ritiro in showroom o la riconsegna, quando disponibile.</p></article>
+          </div>
+        </section>
+
+        <section class="service-section service-cases" aria-labelledby="quando-title">
+          <div class="service-section-copy">
+            <span class="eyebrow">Quando intervenire</span>
+            <h2 id="quando-title">Non esiste una frequenza identica per tutti i tappeti.</h2>
+            <p>La necessità di un lavaggio dipende dall’utilizzo, dall’ambiente, dalla presenza di animali, dalla polvere e dalle condizioni delle fibre. Una valutazione è particolarmente utile in presenza di odori, macchie, deposito di polvere, lunghi periodi di inutilizzo o prima di collocare il tappeto in un nuovo ambiente.</p>
+          </div>
+          <ol class="service-case-list">
+            <li>Polvere accumulata</li>
+            <li>Macchie o incidenti domestici</li>
+            <li>Odori persistenti</li>
+            <li>Presenza di animali</li>
+            <li>Lungo periodo in deposito</li>
+            <li>Prima di un trasloco o nuovo allestimento</li>
+          </ol>
+        </section>
+      </div>
+
+      <aside class="service-sidebar" aria-label="Contatti rapidi per il lavaggio">
+        <div class="service-contact-card">
+          <span class="eyebrow">Contatto diretto</span>
+          <h2>Richiedi una valutazione</h2>
+          <p>Descrivi il tappeto e le condizioni osservate. Ti indicheremo le informazioni necessarie per la valutazione.</p>
+          <dl>
+            <div><dt>Telefono</dt><dd><a href="tel:+390266013100">02 660 13 100</a></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="https://wa.me/393386490517" target="_blank" rel="noopener noreferrer">338 649 0517</a></dd></div>
+            <div><dt>Orari</dt><dd>Lunedì–Sabato 09:00–19:00<br>Domenica su appuntamento</dd></div>
+          </dl>
+          <a class="btn btn-primary" href="#contatti" data-service="Lavaggio tappeto">Inizia la richiesta</a>
+          <small>Puoi inviare fotografie e misure.</small>
+        </div>
+      </aside>
+    </div>
+
+    <section class="service-materials" aria-labelledby="tipologie-title">
+      <div class="container service-materials-grid">
+        <div class="service-materials-copy">
+          <span class="eyebrow eyebrow-light">Materiali e manifatture</span>
+          <h2 id="tipologie-title">Valutiamo tappeti di materiali e manifatture differenti.</h2>
+          <p class="service-materials-note">I tappeti particolarmente delicati, antichi, in seta o già restaurati richiedono sempre un esame specifico prima di definire il trattamento.</p>
+        </div>
+        <div class="service-materials-content">
+          <ul class="service-material-list">
+            <li>Tappeti persiani</li>
+            <li>Tappeti orientali</li>
+            <li>Tappeti annodati a mano</li>
+            <li>Tappeti in lana</li>
+            <li>Tappeti in lana e seta</li>
+            <li>Kilim</li>
+            <li>Tappeti vintage</li>
+            <li>Tappeti con frange o bordi usurati</li>
+          </ul>
+          <figure class="service-material-photo">
+            <!-- PRODUZIONE:
+            sostituire https://soheilr.github.io/irana-tappeti/
+            con https://tappeti-irana.com/
+            -->
+            <img src="https://soheilr.github.io/irana-tappeti/hero-rug-optimized.jpg" alt="Tappeto persiano annodato a mano con motivi tradizionali" width="1200" height="1680" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="controllo-title">
-      <div class="container wash-intro-grid">
-        <div class="wash-intro-copy">
-          <span class="eyebrow">Non un lavaggio standard</span>
-          <h2 id="controllo-title">Prima del trattamento viene il controllo del tappeto.</h2>
-          <p>Un tappeto persiano o orientale non può essere trattato come un normale tessuto domestico. Materiali, densità dell’annodatura, stabilità dei colori, frange, bordi e precedenti riparazioni possono richiedere attenzioni differenti.</p>
-          <p>Per questo il primo passaggio è sempre una valutazione. Fotografie e misure permettono di raccogliere le informazioni iniziali; per i casi più delicati può essere necessario esaminare direttamente il tappeto.</p>
-        </div>
-        <ul class="wash-checklist" aria-label="Controlli prima del lavaggio">
-          <li>Verifica di fibre e colori</li>
-          <li>Controllo di bordi, frange e zone usurate</li>
-          <li>Trattamento definito in base al tappeto</li>
-          <li>Indicazioni chiare prima dell’intervento</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section wash-process" aria-labelledby="processo-lavaggio-title">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">Come funziona</span>
-          <h2 id="processo-lavaggio-title">Dal primo contatto alla riconsegna.</h2>
-        </div>
-        <div class="wash-process-grid">
-          <article class="wash-process-step"><span>01</span><h3>Richiesta</h3><p>Invia fotografie, misure e una breve descrizione delle condizioni del tappeto.</p></article>
-          <article class="wash-process-step"><span>02</span><h3>Valutazione</h3><p>Verifichiamo materiale, manifattura, colori, usure ed eventuali macchie visibili.</p></article>
-          <article class="wash-process-step"><span>03</span><h3>Preventivo</h3><p>Comunichiamo il trattamento consigliato, il costo indicativo e le modalità di ritiro.</p></article>
-          <article class="wash-process-step"><span>04</span><h3>Lavaggio e asciugatura</h3><p>Il tappeto viene trattato in base alle sue caratteristiche e lasciato asciugare con tempi adeguati.</p></article>
-          <article class="wash-process-step"><span>05</span><h3>Riconsegna</h3><p>Al termine concordiamo il ritiro in showroom o la riconsegna, quando disponibile.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="quando-title">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">Quando intervenire</span>
-          <h2 id="quando-title">Non esiste una frequenza identica per tutti i tappeti.</h2>
-          <p>La necessità di un lavaggio dipende dall’utilizzo, dall’ambiente, dalla presenza di animali, dalla polvere e dalle condizioni delle fibre. Una valutazione è particolarmente utile in presenza di odori, macchie, deposito di polvere, lunghi periodi di inutilizzo o prima di collocare il tappeto in un nuovo ambiente.</p>
-        </div>
-        <div class="wash-trigger-grid">
-          <article class="wash-trigger"><h3>Polvere accumulata</h3></article>
-          <article class="wash-trigger"><h3>Macchie o incidenti domestici</h3></article>
-          <article class="wash-trigger"><h3>Odori persistenti</h3></article>
-          <article class="wash-trigger"><h3>Presenza di animali</h3></article>
-          <article class="wash-trigger"><h3>Tappeto rimasto a lungo in deposito</h3></article>
-          <article class="wash-trigger"><h3>Manutenzione prima di un trasloco o nuovo allestimento</h3></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wash-materials" aria-labelledby="tipologie-title">
-      <div class="container wash-materials-grid">
-        <div class="wash-materials-copy">
-          <span class="eyebrow eyebrow-light">Materiali e manifatture</span>
-          <h2 id="tipologie-title">Valutiamo tappeti di materiali e manifatture differenti.</h2>
-          <p class="wash-material-note">I tappeti particolarmente delicati, antichi, in seta o già restaurati richiedono sempre un esame specifico prima di definire il trattamento.</p>
-        </div>
-        <ul class="wash-material-list">
-          <li>Tappeti persiani</li>
-          <li>Tappeti orientali</li>
-          <li>Tappeti annodati a mano</li>
-          <li>Tappeti in lana</li>
-          <li>Tappeti in lana e seta</li>
-          <li>Kilim</li>
-          <li>Tappeti vintage</li>
-          <li>Tappeti con frange o bordi usurati</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="ritiro-title">
-      <div class="container wash-pickup-shell">
-        <div class="wash-pickup-copy">
+    <section class="service-pickup-band" aria-labelledby="ritiro-title">
+      <div class="container service-pickup-grid">
+        <div class="service-pickup-copy">
           <span class="eyebrow">Servizio nell’area di Milano</span>
           <h2 id="ritiro-title">Ritiro e riconsegna da concordare.</h2>
           <p>Per il lavaggio è possibile concordare il ritiro e la riconsegna in base alla zona, alle dimensioni del tappeto e al tipo di intervento. Il servizio viene definito durante la valutazione, senza promesse generiche o costi nascosti.</p>
         </div>
-        <a class="btn btn-dark" href="#contatti" data-service="Lavaggio tappeto">Verifica il servizio nella tua zona</a>
+        <div class="service-pickup-action">
+          <span>Cinisello Balsamo · Milano e area circostante</span>
+          <a class="btn btn-dark" href="#contatti" data-service="Lavaggio tappeto">Verifica il servizio nella tua zona</a>
+        </div>
       </div>
     </section>
 
@@ -242,20 +285,20 @@
       </div>
     </section>
 
-    <section class="section contact-section service-page-contact" id="contatti" aria-labelledby="contact-title">
-      <div class="container contact-shell">
-        <div class="contact-copy">
-          <span class="eyebrow eyebrow-light">Valutazione preliminare</span>
+    <section class="service-final-form" id="contatti" aria-labelledby="contact-title">
+      <div class="container service-final-grid">
+        <div class="service-final-contact">
+          <span class="eyebrow">Valutazione preliminare</span>
           <h2 id="contact-title">Raccontaci le condizioni del tappeto.</h2>
           <p>Indica misure, materiale quando conosciuto e ciò che hai osservato. Dopo l’apertura di WhatsApp potrai aggiungere fotografie complete e dettagli ravvicinati.</p>
-          <div class="contact-facts">
-            <div class="contact-fact"><span class="fact-icon" aria-hidden="true">01</span><div><strong>Showroom</strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+Antonio+Gramsci+2+Cinisello+Balsamo" target="_blank" rel="noopener noreferrer">Piazza Antonio Gramsci 2, Cinisello Balsamo (MI)</a></div></div>
-            <div class="contact-fact"><span class="fact-icon" aria-hidden="true">02</span><div><strong>Telefono e WhatsApp</strong><a href="tel:+390266013100">02 660 13 100</a><span aria-hidden="true"> · </span><a href="https://wa.me/393386490517" target="_blank" rel="noopener noreferrer">338 649 0517</a></div></div>
-            <div class="contact-fact"><span class="fact-icon" aria-hidden="true">03</span><div><strong>Orari</strong><span>Lunedì–Sabato 09:00–19:00 · Domenica su appuntamento</span></div></div>
+          <div class="service-final-facts">
+            <div><strong>Showroom</strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+Antonio+Gramsci+2+Cinisello+Balsamo" target="_blank" rel="noopener noreferrer">Piazza Antonio Gramsci 2, Cinisello Balsamo (MI)</a></div>
+            <div><strong>Telefono e WhatsApp</strong><a href="tel:+390266013100">02 660 13 100</a><a href="https://wa.me/393386490517" target="_blank" rel="noopener noreferrer">338 649 0517</a></div>
+            <div><strong>Orari</strong><span>Lunedì–Sabato 09:00–19:00<br>Domenica su appuntamento</span></div>
           </div>
         </div>
 
-        <form class="contact-card" aria-describedby="form-help form-privacy form-status" data-whatsapp-intro="Buongiorno Irana Tappeti, vorrei richiedere una valutazione per il lavaggio del mio tappeto.">
+        <form class="contact-card service-form-card" aria-describedby="form-help form-privacy form-status" data-whatsapp-intro="Buongiorno Irana Tappeti, vorrei richiedere una valutazione per il lavaggio del mio tappeto.">
           <h3>Richiesta lavaggio</h3>
           <p id="form-help">Compila i dati essenziali: il messaggio si aprirà direttamente su WhatsApp.</p>
           <div class="form-grid">
