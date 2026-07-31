@@ -21,6 +21,7 @@ Questo registro documenta le immagini usate nelle pagine servizio. Le fotografie
 
 | File | Pagina e uso | Provenienza | Proprietario o licenza | Dimensioni originali | Modifiche |
 | --- | --- | --- | --- | --- | --- |
+| `../../../irana-banner-optimized.jpg` | Noleggio: hero, selezione disponibile nello showroom | `irana-banner.jpg`, asset fotografico autentico già presente nel progetto Irana. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria. Il riuso è limitato al progetto Irana e la fotografia non viene presentata come evento, set o allestimento. | Sorgente: 1600 × 568 px; file ottimizzato: 1600 × 568 px | Ottimizzazione JPEG senza ridimensionamento né alterazione del soggetto. |
 | `noleggio/selezione-tappeti-showroom.jpg` e `.webp` | Noleggio: sezione “Selezione in showroom” | `showroom-rugs.jpg`, asset fotografico autentico già presente nel progetto Irana e sorgente dell’omonimo file ottimizzato. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria. Il riuso è limitato al progetto Irana e la fotografia non viene presentata come evento o set. | Sorgente: 1600 × 2133 px; derivati: 1200 × 1600 px | Ridimensionamento proporzionale e ritaglio di un solo pixel in altezza per ottenere le dimensioni richieste; JPEG ottimizzato e copia WebP, senza alterare il soggetto. |
 
 ## Immagini Open Graph
@@ -32,4 +33,4 @@ Questo registro documenta le immagini usate nelle pagine servizio. Le fotografie
 
 ## Verifica ricerca noleggio
 
-L’archivio media del vecchio sito Irana è stato cercato per “noleggio”, “evento”, “set”, “showroom”, “vetrina” e “allestimento”. Non sono emerse fotografie verificabili di eventi o set. Per questo la pagina usa una sola fotografia autentica dello showroom per rappresentare esclusivamente la fase di selezione; le altre sezioni sono tipografiche.
+L’archivio media del vecchio sito Irana è stato cercato per “noleggio”, “evento”, “set”, “showroom”, “vetrina” e “allestimento”. Non sono emerse fotografie verificabili di eventi o set. Per questo la pagina usa due fotografie autentiche dello showroom per rappresentare esclusivamente la disponibilità e la fase di selezione; le altre sezioni sono tipografiche.
