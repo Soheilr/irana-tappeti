@@ -21,7 +21,14 @@ Questo registro documenta le immagini usate nelle pagine servizio. Le fotografie
 
 | File | Pagina e uso | Provenienza | Proprietario o licenza | Dimensioni originali | Modifiche |
 | --- | --- | --- | --- | --- | --- |
-| `noleggio/selezione-tappeti-showroom.jpg` e `.webp` | Noleggio: sezione “Selezione in showroom” e anteprima Open Graph | Asset già presente nel progetto Irana come `showroom-rugs.jpg` prima di questo intervento; non è stato scaricato dal web in questo step. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria del file. Il riuso è limitato al progetto Irana e la fotografia non viene presentata come evento o set. Per prudenza non è usata come hero della pagina. | 1600 × 2133 px | Originale JPEG copiato nella cartella del servizio; WebP creato a qualità 88, senza ridimensionamento né ritaglio del file. |
+| `noleggio/selezione-tappeti-showroom.jpg` e `.webp` | Noleggio: sezione “Selezione in showroom” | `showroom-rugs.jpg`, asset fotografico autentico già presente nel progetto Irana e sorgente dell’omonimo file ottimizzato. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria. Il riuso è limitato al progetto Irana e la fotografia non viene presentata come evento o set. | Sorgente: 1600 × 2133 px; derivati: 1200 × 1600 px | Ridimensionamento proporzionale e ritaglio di un solo pixel in altezza per ottenere le dimensioni richieste; JPEG ottimizzato e copia WebP, senza alterare il soggetto. |
+
+## Immagini Open Graph
+
+| File | Pagina e uso | Provenienza | Proprietario o licenza | Dimensioni originali | Modifiche |
+| --- | --- | --- | --- | --- | --- |
+| `../../og/og-noleggio-tappeti.jpg` | Noleggio: anteprima Open Graph e Twitter | `showroom-rugs.jpg`, asset fotografico autentico già presente nel progetto Irana. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria. Il riuso è limitato al progetto Irana. | Sorgente: 1600 × 2133 px; derivato: 1200 × 630 px | Ritaglio panoramico e ridimensionamento, senza testo e senza alterazioni del soggetto. |
+| `../../og/og-tappeti-persiani-milano.jpg` | Tappeti persiani e orientali: anteprima Open Graph e Twitter | `hero-rug-optimized.jpg`, asset fotografico autentico già presente nel progetto Irana. | Fotografo, titolare del copyright e licenza non sono indicati nella documentazione originaria. Il riuso è limitato al progetto Irana. | Sorgente: 1200 × 1680 px; derivato: 1200 × 630 px | Ritaglio panoramico, senza ingrandimento, testo o alterazioni del soggetto. |
 
 ## Verifica ricerca noleggio
 
