@@ -317,7 +317,7 @@ p { text-wrap: pretty; }
 .service-page { background: var(--paper); }
 .breadcrumb { padding: 28px 0 14px; }
 .breadcrumb ol { margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 9px; color: var(--muted); font-size: 0.72rem; list-style: none; }
-.breadcrumb li + li::before { margin-right: 9px; color: var(--border); content: "/"; }
+.breadcrumb li + li::before { margin-right: 9px; color: var(--line); content: "/"; }
 .breadcrumb a { color: var(--cerulean); font-weight: 800; }
 .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -367,6 +367,14 @@ p { text-wrap: pretty; }
 .service-numbered-list li { padding: 20px 0; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; border-bottom: 1px solid var(--line); }
 .service-numbered-list span { color: var(--cerulean); font-family: var(--serif); font-size: 1.15rem; }
 .service-numbered-list strong { font-family: var(--serif); font-size: 1.08rem; font-weight: 400; line-height: 1.2; }
+
+.service-intervention-list { border-top: 1px solid var(--line); list-style: none; counter-reset: service-intervention; }
+.service-intervention-list li { min-height: 78px; padding: 18px 0; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 16px; align-items: center; border-bottom: 1px solid var(--line); color: var(--indigo); font-family: var(--serif); font-size: clamp(1.08rem, 1.8vw, 1.34rem); line-height: 1.2; counter-increment: service-intervention; }
+.service-intervention-list li::before { color: var(--cerulean); content: counter(service-intervention, decimal-leading-zero); font-family: var(--sans); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.08em; }
+.service-intervention-note { margin-top: 24px; padding: 20px 0 0 22px; border-top: 1px solid var(--line); border-left: 2px solid var(--gold); color: var(--muted); font-size: 0.78rem; }
+
+.service-repair-page .service-page-hero-media img { object-position: center 42%; }
+.service-repair-page .service-image-break img { object-position: center 48%; }
 
 .service-image-break { margin: 0 0 clamp(76px, 8vw, 112px); }
 .service-image-break img { width: 100%; height: clamp(300px, 34vw, 410px); object-fit: cover; object-position: center 52%; border-radius: 14px; background: var(--line); }
