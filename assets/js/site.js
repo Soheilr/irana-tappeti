@@ -1,5 +1,7 @@
 const menuButton = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
+const servicesToggle = document.querySelector(".nav-dropdown-toggle");
+const servicesMenu = document.querySelector(".nav-dropdown-menu");
 
 function closeMobileMenu({ restoreFocus = false } = {}) {
   if (!mobileMenu || !menuButton) return;
@@ -20,18 +22,44 @@ menuButton?.addEventListener("click", () => {
 });
 
 mobileMenu?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => closeMobileMenu());
+  link.addEventListener("click", () => closeMobileMenu({ restoreFocus: link.getAttribute("href")?.startsWith("#") }));
+});
+
+function closeServicesMenu({ restoreFocus = false } = {}) {
+  if (!servicesToggle || !servicesMenu) return;
+  servicesMenu.setAttribute("hidden", "");
+  servicesToggle.setAttribute("aria-expanded", "false");
+  if (restoreFocus) servicesToggle.focus();
+}
+
+servicesToggle?.addEventListener("click", () => {
+  if (!servicesMenu) return;
+  const open = servicesMenu.hasAttribute("hidden");
+  servicesMenu.toggleAttribute("hidden", !open);
+  servicesToggle.setAttribute("aria-expanded", String(open));
+  if (open) servicesMenu.querySelector("a")?.focus();
+});
+
+servicesMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => closeServicesMenu());
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && mobileMenu && !mobileMenu.hasAttribute("hidden")) {
     closeMobileMenu({ restoreFocus: true });
   }
+  if (event.key === "Escape" && servicesMenu && !servicesMenu.hasAttribute("hidden")) {
+    closeServicesMenu({ restoreFocus: true });
+  }
 });
 
 document.addEventListener("click", (event) => {
   const target = event.target;
   if (!(target instanceof Element)) return;
+
+  if (servicesMenu && !servicesMenu.hasAttribute("hidden") && !target.closest(".nav-dropdown")) {
+    closeServicesMenu();
+  }
 
   const serviceLink = target.closest("[data-service]");
   if (!serviceLink) return;
