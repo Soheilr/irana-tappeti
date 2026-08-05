@@ -149,22 +149,9 @@ p { text-wrap: pretty; }
   backdrop-filter: blur(15px);
 }
 .nav-wrap { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--indigo); }
-.brand-symbol {
-  position: relative;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--indigo);
-  border-radius: 7px;
-}
-.brand-symbol::before,
-.brand-symbol i { width: 24px; height: 24px; border: 1px solid currentColor; content: ""; transform: rotate(45deg); }
-.brand-symbol i { position: absolute; width: 7px; height: 7px; background: var(--gold); border: 0; }
-.brand-text strong { display: block; font-family: var(--serif); font-size: 1.45rem; font-weight: 700; letter-spacing: 0.09em; line-height: 1; }
-.brand-text small { display: block; margin-top: 5px; color: var(--muted); font-size: 0.55rem; font-weight: 800; letter-spacing: 0.15em; line-height: 1; text-transform: uppercase; }
+.brand { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; color: var(--indigo); }
+.brand-official img { width: auto; height: 62px; display: block; object-fit: contain; }
+.footer-brand .brand-official img { height: 92px; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 32px); }
 .desktop-nav > a:not(.btn) { position: relative; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
 .desktop-nav > a:not(.btn)::after { position: absolute; right: 0; bottom: -8px; left: 0; height: 1px; background: var(--cerulean); content: ""; transform: scaleX(0); transform-origin: right; transition: transform 0.22s ease; }
@@ -529,6 +516,7 @@ p { text-wrap: pretty; }
 .collection-contact { background: color-mix(in srgb, var(--seagrass) 9%, var(--paper)); }
 
 @media (max-width: 1060px) {
+  .brand-official img { height: 56px; }
   .desktop-nav > a:not(.btn) { display: none; }
   .menu-toggle { display: grid; }
   .hero-copy { padding: 54px; }
@@ -617,7 +605,8 @@ p { text-wrap: pretty; }
   .section { padding: 76px 0; }
   .section-title { margin-bottom: 30px; }
   .topbar { font-size: 0.6rem; }
-  .brand-text small { display: none; }
+  .brand-official img { height: 50px; }
+  .footer-brand .brand-official img { height: 78px; }
   .hero-shell { border-radius: 23px; }
   .hero-media { min-height: 420px; }
   .hero-copy { padding: 40px 22px 36px; }
