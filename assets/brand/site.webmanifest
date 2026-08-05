@@ -2,7 +2,7 @@
   "name": "Irana Tappeti",
   "short_name": "Irana",
   "description": "Tappeti persiani e orientali, showroom e servizi nell’area di Milano.",
-  "start_url": "../../",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#F8F7F1",
   "theme_color": "#222E50",
@@ -17,5 +17,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "scope": "/"
 }
