@@ -31,3 +31,5 @@ npm run validate:site
 ```
 
 Il controllo verifica pagine, metadati, link interni, immagini, JSON-LD, sitemap, robots, CNAME e versione degli asset. Le regole per le vecchie URL sono documentate in `deploy/apache-redirects.conf` e `docs/legacy-redirects.csv`.
+
+Stato release: produzione verificata.
