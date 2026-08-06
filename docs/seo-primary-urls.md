@@ -20,4 +20,4 @@ Prima del lancio, per ogni pagina esterna con intento simile bisognerà sceglier
 - noindex;
 - redirect, quando appropriato.
 
-In questo step non viene modificato alcun sito esterno e la preview GitHub Pages rimane `noindex,follow`.
+In questo step non viene modificato alcun sito esterno e la produzione pubblica è distribuita da Plesk sul dominio canonico.
