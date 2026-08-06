@@ -1,0 +1,9 @@
+{
+  "name": "irana-tappeti-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito istituzionale statico di Irana Tappeti.",
+  "scripts": {
+    "validate:site": "node scripts/validate-site.mjs"
+  }
+}

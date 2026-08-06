@@ -1,28 +1,22 @@
 # Irana Tappeti
 
-Sito istituzionale di **Irana Tappeti**, showroom di tappeti persiani e orientali e servizi specializzati nell’area di Milano.
+Sito istituzionale statico di **Irana Tappeti**, showroom di tappeti persiani e orientali e servizi specializzati nell’area di Milano.
 
-- Dominio di produzione: [tappeti-irana.com](https://tappeti-irana.com/)
-- Sorgente: repository GitHub `Soheilr/irana-tappeti`
-- Ultima release: 5 agosto 2026
+- Repository sorgente: GitHub `Soheilr/irana-tappeti`
+- Branch di produzione: `main`
+- Dominio pubblico: [tappeti-irana.com](https://tappeti-irana.com/)
+- Hosting pubblico: Plesk
+- Distribuzione: Plesk tramite Git
+- Document root: `site-production`
+- Ultima release: 6 agosto 2026
 
-## Pagine
+## Architettura
 
-- Homepage
-- Tappeti persiani e orientali
-- Lavaggio tappeti
-- Riparazione e restauro
-- Noleggio tappeti
-- Contatti e showroom
-- Privacy Policy
-- Cookie Policy
-- Pagina 404
-
-La versione statica pubblicata si trova in `github-pages/`. Tutte le pagine condividono `assets/css/site.css` e `assets/js/site.js`, senza framework o librerie esterne nel browser.
+Il sito pubblico usa HTML, CSS e JavaScript statici condivisi, senza framework frontend nel browser. GitHub gestisce sorgente e versionamento; Plesk distribuisce il branch `main` nella document root `site-production`, gestisce HTTPS, redirect Apache e pagina 404.
 
 ## Privacy e contatti
 
-Il sito non installa strumenti di analytics, profilazione o remarketing. Il form non salva dati e non invia richieste a database: prepara un messaggio leggibile e apre WhatsApp al numero aziendale.
+Il sito non installa analytics, cookie di profilazione o sistemi di remarketing. Il form non salva dati e non usa database: prepara un messaggio leggibile e apre WhatsApp al numero aziendale.
 
 ## Validazione
 
@@ -30,6 +24,4 @@ Il sito non installa strumenti di analytics, profilazione o remarketing. Il form
 npm run validate:site
 ```
 
-Il controllo verifica pagine, metadati, link interni, immagini, JSON-LD, sitemap, robots, CNAME e versione degli asset. Le regole per le vecchie URL sono documentate in `deploy/apache-redirects.conf` e `docs/legacy-redirects.csv`.
-
-Stato release: produzione verificata.
+I redirect di produzione e la pagina 404 sono gestiti da `.htaccess`. La mappa completa delle vecchie URL è mantenuta in `deploy/apache-redirects.conf`.
