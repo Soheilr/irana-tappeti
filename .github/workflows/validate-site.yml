@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 22
       - name: Validate production files
-        run: node scripts/validate-site.mjs
+        run: npm run validate:site
