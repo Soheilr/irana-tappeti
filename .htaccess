@@ -14,10 +14,16 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 <IfModule mod_alias.c>
-  Redirect 301 /galleria-irana-tappeti/ /tappeti-persiani-milano/
-  Redirect 301 /blog/ /tappeti-persiani-milano/
-  Redirect 301 /manutenzione/ /
-  Redirect 301 /home-2/ /
+  RedirectMatch 301 ^/galleria-irana-tappeti(?:/.*)?$ /tappeti-persiani-milano/
+  RedirectMatch 301 ^/blog(?:/.*)?$ /tappeti-persiani-milano/
+  RedirectMatch 301 ^/manutenzione(?:/.*)?$ /
+  RedirectMatch 301 ^/home-2(?:/.*)?$ /
+
+  RedirectMatch 301 ^/category/tappeti-persiani(?:/.*)?$ /tappeti-persiani-milano/
+  RedirectMatch 301 ^/category/irana-tappeti(?:/.*)?$ /
+  RedirectMatch 301 ^/category/milano(?:/.*)?$ /
+  RedirectMatch 301 ^/category/cinisello-balsamo(?:/.*)?$ /
+  RedirectMatch 301 ^/category/iran(?:/.*)?$ /tappeti-persiani-milano/
   Redirect 301 /tappeti-persiani/shab-e-yalda/ /tappeti-persiani-milano/
   Redirect 301 /irana-tappeti/un-villaggio-di-natale/ /
   Redirect 301 /irana-tappeti/natale-e-cinema-elenco-classici/ /
