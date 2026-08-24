@@ -47,6 +47,21 @@ ErrorDocument 404 /404.html
   Redirect 301 /cinisello-balsamo/artigianato-di-forte-dei-marmi-a-cinisello-balsamo/ /
   Redirect 301 /irana-tappeti/manifattura-dei-tappeti-moderni-in-india/ /tappeti-persiani-milano/
   Redirect 301 /uncategorized/il-tappeto-e-tornato-di-moda/ /tappeti-persiani-milano/
+
+
+RedirectMatch 301 ^/new/lavaggio-tappeti/?$ /lavaggio-tappeti/
+
+RedirectMatch 301 ^/tappeti-persiani/page/[0-9]+/?$ /tappeti-persiani-milano/
+
+RedirectMatch 301 ^/irana-tappeti/page/[0-9]+/?$ /
+
+RedirectMatch 301 ^/cinisello-balsamo/?$ /
+
+RedirectMatch 301 ^/milano/?$ /
+
+RedirectMatch 301 ^/gallery/tappeti-da-camera(?:/.*)?$ /tappeti-persiani-milano/
+
+RedirectMatch 301 ^/sam_0589-nain-lana-e-seta-255-x-160cm-offerta-e/?$ /tappeti-persiani-milano/
 </IfModule>
 
 <IfModule mod_headers.c>
