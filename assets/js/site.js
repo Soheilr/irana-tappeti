@@ -167,7 +167,7 @@ function createCookieControls() {
   banner.innerHTML = `
     <div class="cookie-banner-copy">
       <p class="cookie-banner-label">Preferenze cookie</p>
-      <h2 id="cookie-banner-title">Scegli se attivare Analytics</h2>
+      <h2 id="cookie-banner-title">Cookies</h2>
       <p>Usiamo cookie tecnici necessari e, solo con il tuo consenso, Google Analytics per comprendere in forma aggregata come viene utilizzato il sito.</p>
     </div>
     <div class="cookie-banner-actions">
