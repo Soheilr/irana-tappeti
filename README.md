@@ -7,16 +7,16 @@ Sito istituzionale statico di **Irana Tappeti**, showroom di tappeti persiani e 
 - Dominio pubblico: [tappeti-irana.com](https://tappeti-irana.com/)
 - Hosting pubblico: Plesk
 - Distribuzione: Plesk tramite Git
-- Document root: `site-production`
-- Ultima release: 6 agosto 2026
+- Document root: `httpdocs`
+- Ultima release: 3 settembre 2026
 
 ## Architettura
 
-Il sito pubblico usa HTML, CSS e JavaScript statici condivisi, senza framework frontend nel browser. GitHub gestisce sorgente e versionamento; Plesk distribuisce il branch `main` nella document root `site-production`, gestisce HTTPS, redirect Apache e pagina 404.
+Il sito pubblico usa HTML, CSS e JavaScript statici condivisi, senza framework frontend nel browser. GitHub gestisce sorgente e versionamento; Plesk distribuisce il branch `main` nella document root `httpdocs`, gestisce HTTPS, redirect Apache e pagina 404.
 
 ## Privacy e contatti
 
-Il sito non installa analytics, cookie di profilazione o sistemi di remarketing. Il form non salva dati e non usa database: prepara un messaggio leggibile e apre WhatsApp al numero aziendale.
+Il sito non usa cookie di profilazione, sistemi di remarketing o database. Google Analytics viene caricato solo dopo il consenso esplicito dell’utente; il form prepara un messaggio leggibile e apre WhatsApp al numero aziendale.
 
 ## Validazione
 
