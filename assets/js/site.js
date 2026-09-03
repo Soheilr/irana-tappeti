@@ -110,3 +110,164 @@ document.querySelectorAll(".contact-card").forEach((form) => {
     );
   });
 });
+
+const ANALYTICS_MEASUREMENT_ID = "G-0FWL202XG8";
+const CONSENT_COOKIE_NAME = "irana_cookie_consent";
+const CONSENT_MAX_AGE = 60 * 60 * 24 * 180;
+let cookiePreferencesDialog;
+let cookiePreferencesTrigger;
+
+function getCookie(name) {
+  const entry = document.cookie
+    .split(";")
+    .map((value) => value.trim())
+    .find((value) => value.startsWith(`${name}=`));
+  return entry ? decodeURIComponent(entry.slice(name.length + 1)) : "";
+}
+
+function setConsent(value) {
+  document.cookie = `${CONSENT_COOKIE_NAME}=${encodeURIComponent(value)}; Max-Age=${CONSENT_MAX_AGE}; Path=/; SameSite=Lax; Secure`;
+}
+
+function removeAnalyticsCookies() {
+  document.cookie.split(";").forEach((entry) => {
+    const name = entry.trim().split("=")[0];
+    if (/^_ga(?:_|$)/.test(name)) {
+      document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax; Secure`;
+    }
+  });
+}
+
+function loadAnalytics() {
+  window[`ga-disable-${ANALYTICS_MEASUREMENT_ID}`] = false;
+  if (document.querySelector(`script[data-analytics-id="${ANALYTICS_MEASUREMENT_ID}"]`)) {
+    if (typeof window.gtag === "function") window.gtag("consent", "update", { analytics_storage: "granted" });
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("consent", "default", { analytics_storage: "granted" });
+  window.gtag("js", new Date());
+  window.gtag("config", ANALYTICS_MEASUREMENT_ID, { anonymize_ip: true });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_MEASUREMENT_ID}`;
+  script.dataset.analyticsId = ANALYTICS_MEASUREMENT_ID;
+  document.head.append(script);
+}
+
+function createCookieControls() {
+  const banner = document.createElement("section");
+  banner.className = "cookie-banner";
+  banner.setAttribute("aria-labelledby", "cookie-banner-title");
+  banner.innerHTML = `
+    <div class="cookie-banner-copy">
+      <p class="cookie-banner-label">Preferenze cookie</p>
+      <h2 id="cookie-banner-title">Scegli se attivare Analytics</h2>
+      <p>Usiamo cookie tecnici necessari e, solo con il tuo consenso, Google Analytics per comprendere in forma aggregata come viene utilizzato il sito.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button class="cookie-button cookie-button-primary" type="button" data-cookie-action="accept">Accetta</button>
+      <button class="cookie-button cookie-button-secondary" type="button" data-cookie-action="reject">Rifiuta</button>
+      <button class="cookie-button cookie-button-secondary" type="button" data-cookie-action="preferences">Gestisci preferenze</button>
+      <a href="/cookie-policy/">Cookie Policy</a>
+    </div>`;
+
+  cookiePreferencesDialog = document.createElement("section");
+  cookiePreferencesDialog.className = "cookie-preferences";
+  cookiePreferencesDialog.hidden = true;
+  cookiePreferencesDialog.setAttribute("role", "dialog");
+  cookiePreferencesDialog.setAttribute("aria-modal", "true");
+  cookiePreferencesDialog.setAttribute("aria-labelledby", "cookie-preferences-title");
+  cookiePreferencesDialog.innerHTML = `
+    <div class="cookie-preferences-panel">
+      <p class="cookie-banner-label">Preferenze cookie</p>
+      <h2 id="cookie-preferences-title">Gestisci Analytics</h2>
+      <p>I cookie tecnici necessari restano sempre attivi. Google Analytics viene caricato solo se selezioni questa opzione.</p>
+      <label class="cookie-checkbox">
+        <input type="checkbox" name="analytics-consent">
+        <span>Consento l’uso di Google Analytics</span>
+      </label>
+      <div class="cookie-preferences-actions">
+        <button class="cookie-button cookie-button-secondary" type="button" data-cookie-action="close">Chiudi</button>
+        <button class="cookie-button cookie-button-primary" type="button" data-cookie-action="save">Salva preferenze</button>
+      </div>
+      <a href="/privacy-policy/">Leggi la Privacy Policy</a>
+    </div>`;
+
+  document.body.append(banner, cookiePreferencesDialog);
+
+  const setChoice = (choice) => {
+    setConsent(choice);
+    banner.hidden = true;
+    if (choice === "analytics") {
+      loadAnalytics();
+    } else {
+      window[`ga-disable-${ANALYTICS_MEASUREMENT_ID}`] = true;
+      if (typeof window.gtag === "function") window.gtag("consent", "update", { analytics_storage: "denied" });
+      removeAnalyticsCookies();
+    }
+  };
+
+  const openPreferences = () => {
+    cookiePreferencesTrigger = document.activeElement;
+    const checkbox = cookiePreferencesDialog.querySelector("input[name='analytics-consent']");
+    if (checkbox instanceof HTMLInputElement) checkbox.checked = getCookie(CONSENT_COOKIE_NAME) === "analytics";
+    cookiePreferencesDialog.hidden = false;
+    document.body.classList.add("cookie-preferences-open");
+    window.setTimeout(() => checkbox?.focus(), 0);
+  };
+
+  const closePreferences = () => {
+    cookiePreferencesDialog.hidden = true;
+    document.body.classList.remove("cookie-preferences-open");
+    if (cookiePreferencesTrigger instanceof HTMLElement) cookiePreferencesTrigger.focus();
+  };
+
+  banner.addEventListener("click", (event) => {
+    const action = event.target instanceof Element && event.target.closest("[data-cookie-action]")?.getAttribute("data-cookie-action");
+    if (action === "accept") setChoice("analytics");
+    if (action === "reject") setChoice("necessary");
+    if (action === "preferences") openPreferences();
+  });
+
+  cookiePreferencesDialog.addEventListener("click", (event) => {
+    const action = event.target instanceof Element && event.target.closest("[data-cookie-action]")?.getAttribute("data-cookie-action");
+    if (action === "close") closePreferences();
+    if (action === "save") {
+      const checkbox = cookiePreferencesDialog.querySelector("input[name='analytics-consent']");
+      setChoice(checkbox instanceof HTMLInputElement && checkbox.checked ? "analytics" : "necessary");
+      closePreferences();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !cookiePreferencesDialog.hidden) {
+      event.preventDefault();
+      closePreferences();
+    }
+  });
+
+  document.querySelectorAll(".footer-bottom").forEach((footer) => {
+    const button = document.createElement("button");
+    button.className = "cookie-preferences-trigger";
+    button.type = "button";
+    button.textContent = "Preferenze cookie";
+    button.addEventListener("click", openPreferences);
+    footer.append(button);
+  });
+
+  const consent = getCookie(CONSENT_COOKIE_NAME);
+  if (consent === "analytics") {
+    banner.hidden = true;
+    loadAnalytics();
+  } else if (consent === "necessary") {
+    banner.hidden = true;
+  }
+}
+
+createCookieControls();
