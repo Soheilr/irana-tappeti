@@ -3,7 +3,7 @@ import { dirname, extname, join, resolve } from "node:path";
 
 const cwd = process.cwd();
 const domain = "https://tappeti-irana.com";
-const version = "20260806-final";
+const version = "20260903-consent";
 const mapsUrl = "https://maps.app.goo.gl/fL556cfAGvnDGBKA7";
 const siteRoot = process.argv[2]
   ? resolve(process.argv[2])
@@ -89,6 +89,7 @@ for (const file of [...principal, ...redirects]) {
   const isRedirect = redirects.includes(file);
   const is404 = file === "404.html";
   const isNoindex = isRedirect || is404;
+  if ((html.match(/<head\b/gi) ?? []).length !== 1 || (html.match(/<\/head>/gi) ?? []).length !== 1) add(file, "struttura head non valida");
   const pageTitle = text(html, "title");
   const descriptionTag = tags(html, "meta").find((tag) => attr(tag, "name") === "description");
   const description = descriptionTag && attr(descriptionTag, "content");
@@ -133,6 +134,7 @@ for (const file of [...principal, ...redirects]) {
   if (/<span[^>]*>\s*WA\s*<\/span>/i.test(html)) add(file, "sigla WA al posto dell’icona");
   if (/\b(charSet|autoComplete|inputMode|fetchPriority)=/.test(html)) add(file, "attributo JSX presente");
   if (/href=["'](?:#|javascript:void\(0\))["']/i.test(html)) add(file, "link fittizio");
+  if (/googletagmanager\.com\/gtag\/js/i.test(html) || /gtag\(['"]config/i.test(html)) add(file, "Google Analytics non deve essere caricato direttamente nell’HTML");
 
   const ids = [...html.matchAll(/\sid=["']([^"']+)["']/gi)].map((match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -235,10 +237,19 @@ if ((sitemap.match(/<lastmod>2026-08-06<\/lastmod>/g) ?? []).length !== expected
 if (/soheilr\.github\.io|preview\.tappeti-irana\.com/i.test(sitemap)) add("sitemap.xml", "URL non di produzione presente");
 
 const buildVersion = (await readFile(join(siteRoot, "build-version.txt"), "utf8")).trim();
-if (buildVersion !== "irana-production-20260806-final") add("build-version.txt", "valore errato");
+if (buildVersion !== "irana-production-20260903-consent") add("build-version.txt", "valore errato");
+
+const siteJs = await readFile(join(siteRoot, "assets/js/site.js"), "utf8");
+for (const value of ["ANALYTICS_MEASUREMENT_ID", "irana_cookie_consent", "loadAnalytics", "Preferenze cookie"]) {
+  if (!siteJs.includes(value)) add("assets/js/site.js", `gestione consenso mancante: ${value}`);
+}
+for (const file of ["privacy-policy/index.html", "cookie-policy/index.html"]) {
+  const html = await readFile(join(siteRoot, file), "utf8");
+  if (!/Google Analytics/i.test(html)) add(file, "informativa Analytics mancante");
+}
 
 const readme = await readFile(join(cwd, "README.md"), "utf8");
-for (const value of ["Plesk", "site-production", "branch `main`", "npm run validate:site", ".htaccess"]) {
+for (const value of ["Plesk", "httpdocs", "branch `main`", "npm run validate:site", ".htaccess"]) {
   if (!readme.includes(value)) add("README.md", `informazione mancante: ${value}`);
 }
 if (/GitHub Pages|pubblicata si trova in `github-pages\//i.test(readme)) add("README.md", "hosting di produzione obsoleto");
